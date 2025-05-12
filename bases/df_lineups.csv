@@ -1,0 +1,309 @@
+fixture_id;id_time;time;formation;coach
+1035045;49;Chelsea;3-4-2-1;M. Pochettino
+1035045;40;Liverpool;4-3-3;J. Klopp
+1035055;48;West Ham;4-2-3-1;D. Moyes
+1035055;49;Chelsea;3-4-2-1;M. Pochettino
+1035062;49;Chelsea;3-4-2-1;M. Pochettino
+1035062;1359;Luton;5-3-2;R. Edwards
+1035071;49;Chelsea;3-4-2-1;M. Pochettino
+1035071;65;Nottingham Forest;3-4-2-1;S. Cooper
+1035077;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035077;49;Chelsea;4-2-3-1;M. Pochettino
+1035046;33;Manchester United;4-1-4-1;E. ten Hag
+1035046;39;Wolves;4-4-2;G. O'Neil
+1035054;47;Tottenham;4-2-3-1;A. Postecoglou
+1035054;33;Manchester United;4-2-3-1;E. ten Hag
+1035064;33;Manchester United;4-2-3-1;E. ten Hag
+1035064;65;Nottingham Forest;3-4-2-1;S. Cooper
+1035067;42;Arsenal;4-3-3;Mikel Arteta
+1035067;33;Manchester United;4-2-3-1;E. ten Hag
+1035081;33;Manchester United;4-3-1-2;E. ten Hag
+1035081;51;Brighton;4-2-3-1;R. De Zerbi
+1035090;44;Burnley;4-3-3;V. Kompany
+1035090;33;Manchester United;4-2-3-1;E. ten Hag
+1035101;33;Manchester United;4-2-3-1;E. ten Hag
+1035101;52;Crystal Palace;4-2-3-1;R. Hodgson
+1035114;33;Manchester United;4-2-3-1;E. ten Hag
+1035114;55;Brentford;3-5-2;T. Frank
+1035125;62;Sheffield Utd;4-4-2;P. Heckingbottom
+1035125;33;Manchester United;4-2-3-1;E. ten Hag
+1035134;33;Manchester United;4-2-3-1;E. ten Hag
+1035134;50;Manchester City;4-2-3-1;Pep Guardiola
+1035140;36;Fulham;4-2-3-1;Marco Silva
+1035140;33;Manchester United;4-2-3-1;E. ten Hag
+1035296;45;Everton;4-4-1-1;S. Dyche
+1035296;33;Manchester United;4-2-3-1;E. ten Hag
+1035311;34;Newcastle;4-3-3;E. Howe
+1035311;33;Manchester United;4-2-3-1;E. ten Hag
+1035323;33;Manchester United;4-2-3-1;E. ten Hag
+1035323;49;Chelsea;4-2-3-1;M. Pochettino
+1035330;33;Manchester United;4-2-3-1;E. ten Hag
+1035330;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035339;40;Liverpool;4-3-3;J. Klopp
+1035339;33;Manchester United;4-2-3-1;E. ten Hag
+1035361;33;Manchester United;4-2-3-1;E. ten Hag
+1035361;66;Aston Villa;4-2-3-1;Unai Emery
+1035370;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035370;33;Manchester United;4-2-3-1;E. ten Hag
+1035381;33;Manchester United;4-2-3-1;E. ten Hag
+1035381;47;Tottenham;4-3-3;A. Postecoglou
+1035390;39;Wolves;3-4-2-1;G. O'Neil
+1035390;33;Manchester United;4-2-3-1;E. ten Hag
+1035401;33;Manchester United;4-2-3-1;E. ten Hag
+1035401;48;West Ham;4-2-3-1;D. Moyes
+1035418;1359;Luton;3-4-2-1;R. Edwards
+1035418;33;Manchester United;4-2-3-1;E. ten Hag
+1035431;33;Manchester United;4-2-3-1;E. ten Hag
+1035431;36;Fulham;4-2-3-1;Marco Silva
+1035439;50;Manchester City;3-2-4-1;Pep Guardiola
+1035439;33;Manchester United;4-2-4;E. ten Hag
+1035451;33;Manchester United;4-3-1-2;E. ten Hag
+1035451;45;Everton;4-4-1-1;S. Dyche
+1035466;55;Brentford;3-5-2;T. Frank
+1035466;33;Manchester United;4-2-3-1;E. ten Hag
+1035490;33;Manchester United;4-2-3-1;E. ten Hag
+1035490;40;Liverpool;4-3-3;J. Klopp
+1035494;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035494;33;Manchester United;4-2-3-1;E. ten Hag
+1035461;33;Manchester United;4-2-3-1;E. ten Hag
+1035461;62;Sheffield Utd;3-5-2;C. Wilder
+1035518;33;Manchester United;4-2-3-1;E. ten Hag
+1035518;44;Burnley;4-4-2;V. Kompany
+1035529;52;Crystal Palace;3-4-2-1;O. Glasner
+1035529;33;Manchester United;4-2-3-1;E. ten Hag
+1035510;33;Manchester United;4-2-2-2;E. ten Hag
+1035510;34;Newcastle;4-3-3;E. Howe
+1035546;51;Brighton;4-2-3-1;R. De Zerbi
+1035546;33;Manchester United;4-2-2-2;E. ten Hag
+1035043;34;Newcastle;4-3-3;E. Howe
+1035043;66;Aston Villa;4-2-3-1;Unai Emery
+1035052;50;Manchester City;4-2-3-1;Pep Guardiola
+1035052;34;Newcastle;4-3-3;E. Howe
+1035065;34;Newcastle;4-3-3;E. Howe
+1035065;40;Liverpool;4-3-3;J. Klopp
+1035082;34;Newcastle;4-3-3;E. Howe
+1035082;55;Brentford;5-3-2;T. Frank
+1035096;62;Sheffield Utd;3-4-2-1;P. Heckingbottom
+1035096;34;Newcastle;4-3-3;E. Howe
+1035102;34;Newcastle;4-3-3;E. Howe
+1035102;44;Burnley;4-2-3-1;V. Kompany
+1035115;48;West Ham;4-2-3-1;D. Moyes
+1035115;34;Newcastle;4-3-3;E. Howe
+1035123;34;Newcastle;4-3-3;E. Howe
+1035123;52;Crystal Palace;4-3-3;R. Hodgson
+1035143;34;Newcastle;4-3-3;E. Howe
+1035143;42;Arsenal;4-3-3;Mikel Arteta
+1035147;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035147;34;Newcastle;4-3-3;E. Howe
+1035300;34;Newcastle;4-3-3;E. Howe
+1035300;49;Chelsea;4-2-3-1;M. Pochettino
+1035316;45;Everton;4-4-1-1;S. Dyche
+1035316;34;Newcastle;4-3-3;E. Howe
+1035341;34;Newcastle;4-3-3;E. Howe
+1035341;36;Fulham;4-2-3-1;Marco Silva
+1035348;1359;Luton;3-4-2-1;R. Edwards
+1035348;34;Newcastle;4-3-3;E. Howe
+1035362;34;Newcastle;4-3-3;E. Howe
+1035362;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035367;40;Liverpool;4-3-3;J. Klopp
+1035367;34;Newcastle;4-3-3;E. Howe
+1035382;34;Newcastle;4-3-3;E. Howe
+1035382;50;Manchester City;4-2-3-1;Pep Guardiola
+1035402;34;Newcastle;4-3-3;E. Howe
+1035402;1359;Luton;3-4-2-1;R. Edwards
+1035039;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035039;48;West Ham;4-2-3-1;D. Moyes
+1035050;40;Liverpool;4-3-3;J. Klopp
+1035050;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035057;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035057;47;Tottenham;4-2-3-1;A. Postecoglou
+1035068;55;Brentford;4-3-3;T. Frank
+1035068;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035089;51;Brighton;4-2-3-1;R. De Zerbi
+1035089;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035111;45;Everton;4-4-1-1;S. Dyche
+1035111;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035117;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035117;39;Wolves;3-4-3;G. O'Neil
+1035127;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035127;44;Burnley;4-3-3;V. Kompany
+1035142;50;Manchester City;3-4-2-1;Pep Guardiola
+1035142;35;Bournemouth;5-4-1;Andoni Iraola
+1035304;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035304;66;Aston Villa;4-4-2;Unai Emery
+1035322;52;Crystal Palace;4-2-3-1;R. Hodgson
+1035322;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035350;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035350;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035354;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035354;36;Fulham;4-2-3-1;Marco Silva
+1035374;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035374;40;Liverpool;4-3-3;J. Klopp
+1035389;48;West Ham;4-3-2-1;D. Moyes
+1035389;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035394;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035394;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035406;36;Fulham;4-2-3-1;Marco Silva
+1035406;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035420;34;Newcastle;4-3-3;E. Howe
+1035420;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035435;44;Burnley;4-4-2;V. Kompany
+1035435;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035444;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035444;62;Sheffield Utd;3-5-2;C. Wilder
+1035334;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035334;1359;Luton;3-4-2-1;R. Edwards
+1035464;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035464;45;Everton;4-4-1-1;S. Dyche
+1035474;35;Bournemouth;4-3-3;Andoni Iraola
+1035474;52;Crystal Palace;3-4-3;O. Glasner
+1035504;66;Aston Villa;4-2-3-1;Unai Emery
+1035504;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035463;39;Wolves;4-1-4-1;G. O'Neil
+1035463;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035514;35;Bournemouth;4-4-2;Andoni Iraola
+1035514;51;Brighton;4-2-3-1;R. De Zerbi
+1035524;42;Arsenal;4-3-3;Mikel Arteta
+1035524;35;Bournemouth;4-3-3;Andoni Iraola
+1035548;49;Chelsea;4-2-3-1;M. Pochettino
+1035548;35;Bournemouth;4-2-3-1;Andoni Iraola
+1035041;45;Everton;4-4-1-1;S. Dyche
+1035041;36;Fulham;4-3-3;Marco Silva
+1035049;36;Fulham;4-3-3;Marco Silva
+1035049;55;Brentford;4-3-3;T. Frank
+1035058;42;Arsenal;4-3-3;Mikel Arteta
+1035058;36;Fulham;4-3-3;Marco Silva
+1035075;50;Manchester City;4-2-3-1;Pep Guardiola
+1035075;36;Fulham;4-3-3;Marco Silva
+1035092;52;Crystal Palace;4-2-3-1;R. Hodgson
+1035092;36;Fulham;4-3-3;Marco Silva
+1035100;36;Fulham;4-3-3;Marco Silva
+1035100;49;Chelsea;4-3-3;M. Pochettino
+1035112;36;Fulham;4-3-3;Marco Silva
+1035112;62;Sheffield Utd;3-5-2;P. Heckingbottom
+1035126;47;Tottenham;4-2-3-1;A. Postecoglou
+1035126;36;Fulham;4-2-3-1;Marco Silva
+1035130;51;Brighton;3-4-2-1;R. De Zerbi
+1035130;36;Fulham;4-2-3-1;Marco Silva
+1035149;66;Aston Villa;4-2-2-2;Unai Emery
+1035149;36;Fulham;4-2-3-1;Marco Silva
+1035297;36;Fulham;4-2-3-1;Marco Silva
+1035297;39;Wolves;3-5-2;G. O'Neil
+1035309;40;Liverpool;4-3-3;J. Klopp
+1035309;36;Fulham;4-2-3-1;Marco Silva
+1035317;36;Fulham;4-2-3-1;Marco Silva
+1035317;65;Nottingham Forest;4-2-3-1;S. Cooper
+1035328;36;Fulham;4-2-3-1;Marco Silva
+1035328;48;West Ham;4-4-1-1;D. Moyes
+1035346;36;Fulham;4-2-3-1;Marco Silva
+1035346;44;Burnley;4-4-2;V. Kompany
+1035366;36;Fulham;4-2-3-1;Marco Silva
+1035366;42;Arsenal;4-3-3;Mikel Arteta
+1035379;49;Chelsea;4-2-3-1;M. Pochettino
+1035379;36;Fulham;4-2-3-1;Marco Silva
+1035385;36;Fulham;4-2-3-1;Marco Silva
+1035385;45;Everton;4-4-1-1;S. Dyche
+1035417;36;Fulham;4-2-3-1;Marco Silva
+1035417;66;Aston Villa;4-4-2;Unai Emery
+1035437;36;Fulham;4-2-3-1;Marco Silva
+1035437;51;Brighton;3-4-2-1;R. De Zerbi
+1035453;39;Wolves;4-2-3-1;G. O'Neil
+1035453;36;Fulham;4-2-3-1;Marco Silva
+1035472;62;Sheffield Utd;3-5-2;C. Wilder
+1035472;36;Fulham;4-2-3-1;Marco Silva
+1035478;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035478;36;Fulham;4-2-3-1;Marco Silva
+1035056;39;Wolves;4-4-1-1;G. O'Neil
+1035056;51;Brighton;4-2-3-1;R. De Zerbi
+1035063;45;Everton;4-1-4-1;S. Dyche
+1035063;39;Wolves;4-4-1-1;G. O'Neil
+1035072;52;Crystal Palace;4-2-3-1;R. Hodgson
+1035072;39;Wolves;4-4-1-1;G. O'Neil
+1035086;39;Wolves;4-2-3-1;G. O'Neil
+1035086;40;Liverpool;4-3-3;J. Klopp
+1035094;1359;Luton;3-4-3;R. Edwards
+1035094;39;Wolves;4-2-3-1;G. O'Neil
+1035106;39;Wolves;3-4-3;G. O'Neil
+1035106;50;Manchester City;4-2-3-1;Pep Guardiola
+1035116;39;Wolves;3-4-3;G. O'Neil
+1035116;66;Aston Villa;4-4-2;Unai Emery
+1035136;39;Wolves;4-4-2;G. O'Neil
+1035136;34;Newcastle;4-3-3;E. Howe
+1035145;62;Sheffield Utd;3-4-1-2;P. Heckingbottom
+1035145;39;Wolves;4-4-1-1;G. O'Neil
+1035156;39;Wolves;3-5-2;G. O'Neil
+1035156;47;Tottenham;4-3-3;A. Postecoglou
+1035305;42;Arsenal;4-3-3;Mikel Arteta
+1035305;39;Wolves;3-5-2;G. O'Neil
+1035333;39;Wolves;3-4-3;G. O'Neil
+1035333;65;Nottingham Forest;3-5-2;S. Cooper
+1035343;48;West Ham;4-2-3-1;D. Moyes
+1035343;39;Wolves;3-4-3;G. O'Neil
+1035353;39;Wolves;3-4-2-1;G. O'Neil
+1035353;49;Chelsea;4-2-3-1;M. Pochettino
+1035356;55;Brentford;4-3-3;T. Frank
+1035356;39;Wolves;3-4-2-1;G. O'Neil
+1035373;39;Wolves;3-4-2-1;G. O'Neil
+1035373;45;Everton;5-4-1;S. Dyche
+1035399;49;Chelsea;4-2-3-1;M. Pochettino
+1035399;39;Wolves;3-4-2-1;G. O'Neil
+1035413;39;Wolves;3-4-2-1;G. O'Neil
+1035413;55;Brentford;3-5-2;T. Frank
+1035423;47;Tottenham;4-2-3-1;A. Postecoglou
+1035423;39;Wolves;3-4-2-1;G. O'Neil
+1035433;39;Wolves;3-4-2-1;G. O'Neil
+1035433;62;Sheffield Utd;3-5-2;C. Wilder
+1035465;66;Aston Villa;4-4-2;Unai Emery
+1035465;39;Wolves;3-4-2-1;G. O'Neil
+1035477;44;Burnley;4-4-2;V. Kompany
+1035477;39;Wolves;4-4-1-1;G. O'Neil
+1035493;39;Wolves;3-4-2-1;G. O'Neil
+1035493;48;West Ham;4-2-3-1;D. Moyes
+1035502;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035502;39;Wolves;3-4-1-2;G. O'Neil
+1035523;39;Wolves;3-5-1-1;G. O'Neil
+1035523;1359;Luton;3-4-2-1;R. Edwards
+1035532;50;Manchester City;4-2-3-1;Pep Guardiola
+1035532;39;Wolves;3-5-2;G. O'Neil
+1035543;39;Wolves;3-5-1-1;G. O'Neil
+1035543;52;Crystal Palace;3-4-2-1;O. Glasner
+1035550;40;Liverpool;4-3-3;J. Klopp
+1035550;39;Wolves;3-5-1-1;G. O'Neil
+1035073;40;Liverpool;4-3-3;J. Klopp
+1035073;66;Aston Villa;4-4-2;Unai Emery
+1035093;40;Liverpool;4-3-3;J. Klopp
+1035093;48;West Ham;4-2-3-1;D. Moyes
+1035108;51;Brighton;4-2-3-1;R. De Zerbi
+1035108;40;Liverpool;4-3-3;J. Klopp
+1035121;40;Liverpool;4-3-3;J. Klopp
+1035121;45;Everton;4-4-1-1;S. Dyche
+1035133;40;Liverpool;4-3-3;J. Klopp
+1035133;65;Nottingham Forest;5-4-1;S. Cooper
+1035141;1359;Luton;3-4-2-1;R. Edwards
+1035141;40;Liverpool;4-3-3;J. Klopp
+1035153;40;Liverpool;4-3-3;J. Klopp
+1035153;55;Brentford;5-3-2;T. Frank
+1035319;62;Sheffield Utd;3-4-2-1;C. Wilder
+1035319;40;Liverpool;4-3-3;J. Klopp
+1035326;52;Crystal Palace;4-3-3;R. Hodgson
+1035326;40;Liverpool;4-3-3;J. Klopp
+1035347;40;Liverpool;4-3-3;J. Klopp
+1035347;42;Arsenal;4-3-3;Mikel Arteta
+1035392;40;Liverpool;4-3-3;J. Klopp
+1035392;49;Chelsea;4-2-3-1;M. Pochettino
+1035395;42;Arsenal;4-3-3;Mikel Arteta
+1035395;40;Liverpool;4-3-3;J. Klopp
+1035407;40;Liverpool;4-3-3;J. Klopp
+1035407;44;Burnley;4-4-2;V. Kompany
+1035430;40;Liverpool;4-3-3;J. Klopp
+1035430;1359;Luton;3-4-2-1;R. Edwards
+1035441;65;Nottingham Forest;4-2-3-1;Nuno Espírito Santo
+1035441;40;Liverpool;4-3-3;J. Klopp
+1035450;40;Liverpool;4-3-3;J. Klopp
+1035450;50;Manchester City;3-2-4-1;Pep Guardiola
+1035468;40;Liverpool;4-3-3;J. Klopp
+1035468;51;Brighton;4-2-3-1;R. De Zerbi
+1035482;40;Liverpool;4-3-3;J. Klopp
+1035482;62;Sheffield Utd;3-5-2;C. Wilder
+1035499;40;Liverpool;4-3-3;J. Klopp
+1035499;52;Crystal Palace;3-4-3;O. Glasner
