@@ -54,7 +54,7 @@ def coletar_dados(season: str = Query(...), league: str = Query(...)):
         logging.info(f"Encontrados times com menos de 38 partidas: {times_incompletos}")
         for team_id in times_incompletos:
             novas_partidas = buscar_partidas(team_id, season, league, headers)
-            df_partidas = pd.concat([df_partidas, novas_partidas]).drop_duplicates('id_partida')
+            df_partidas = pd.concat([df_partidas, novas_partidas]).drop_duplicates(subset=['id_partida', 'id_time_casa'])
         inserir_dados(conn, df_partidas, "partidas", replace=True)
 
     faltam_stats, faltam_lineups = partidas_faltantes(df_partidas, df_stats, df_lineups)

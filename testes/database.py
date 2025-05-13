@@ -28,15 +28,15 @@ def inserir_dados(conn: sqlite3.Connection, df: pd.DataFrame, tabela: str, repla
 
 
 def partidas_incompletas(df_partidas: pd.DataFrame) -> list:
-    partidas_por_time = df_partidas.groupby('time_id').size()
+    partidas_por_time = df_partidas['id_time_casa'].value_counts() + df_partidas['id_time_fora'].value_counts()
     incompletos = partidas_por_time[partidas_por_time < 38].index.tolist()
     return incompletos
 
 
 def partidas_faltantes(df_partidas: pd.DataFrame, df_stats: pd.DataFrame, df_lineups: pd.DataFrame):
     ids_partidas = set(df_partidas['id_partida'])
-    stats_coletadas = set(df_stats['id_partida']) if not df_stats.empty else set()
-    lineups_coletados = set(df_lineups['id_partida']) if not df_lineups.empty else set()
+    stats_coletadas = set(df_stats['fixture_id']) if not df_stats.empty else set()
+    lineups_coletados = set(df_lineups['fixture_id']) if not df_lineups.empty else set()
 
     faltam_stats = list(ids_partidas - stats_coletadas)
     faltam_lineups = list(ids_partidas - lineups_coletados)
