@@ -35,8 +35,8 @@ def partidas_incompletas(df_partidas: pd.DataFrame) -> list:
 
 def partidas_faltantes(df_partidas: pd.DataFrame, df_stats: pd.DataFrame, df_lineups: pd.DataFrame):
     ids_partidas = set(df_partidas['id_partida'])
-    stats_coletadas = set(df_stats['fixture_id']) if not df_stats.empty else set()
-    lineups_coletados = set(df_lineups['fixture_id']) if not df_lineups.empty else set()
+    stats_coletadas = set(df_stats['id_partida']) if not df_stats.empty else set()
+    lineups_coletados = set(df_lineups['id_partida']) if not df_lineups.empty else set()
 
     faltam_stats = list(ids_partidas - stats_coletadas)
     faltam_lineups = list(ids_partidas - lineups_coletados)

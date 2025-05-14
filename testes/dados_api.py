@@ -64,10 +64,10 @@ def buscar_estatisticas(match_id, headers):
         estatisticas_time = {item['type']: item['value'] for item in team_data['statistics']}
         estatisticas_time['time'] = team_data['team']['name']
         estatisticas_time['id_time'] = team_data['team']['id']
-        estatisticas_time['fixture_id'] = match_id
+        estatisticas_time['id_partida'] = match_id
         estatisticas.append(estatisticas_time)
     df_estatisticas = pd.DataFrame(estatisticas)
-    cols = ['fixture_id', 'id_time', 'time'] + [col for col in df_estatisticas.columns if col not in ['fixture_id', 'id_time', 'time']]
+    cols = ['id_partida', 'id_time', 'time'] + [col for col in df_estatisticas.columns if col not in ['id_partida', 'id_time', 'time']]
     return df_estatisticas[cols]
 
 def buscar_lineups(match_id, headers):
@@ -80,9 +80,10 @@ def buscar_lineups(match_id, headers):
         lineups.append({
             "id_partida": match_id,
             "id_time": l["team"]["id"],
+            'time': l["team"]["name"],
             "coach": l["coach"]["name"] if l.get("coach") else None,
             "formation": l.get("formation")
         })
     df_lineups = pd.DataFrame(lineups)
-    cols = ['fixture_id', 'id_time', 'time'] + [col for col in df_lineups.columns if col not in ['fixture_id', 'id_time', 'time']]
+    cols = ['id_partida', 'id_time', 'time'] + [col for col in df_lineups.columns if col not in ['id_partida', 'id_time', 'time']]
     return df_lineups[cols]
