@@ -1,12 +1,18 @@
-// import { API } from "./api";
+import { API } from "./api";
 
-// const API_URL = API;
+const API_URL = API;
 
-// const fetchMatchPrediction = async (params: {id: number}) => {
-//     const response = await API_URL.get('/predicition', {
-//       params: params ,
-//     });
-//     return response.data;
-//   };
+interface Prediction {
+  field: string;
+  squad: string;
+  opponent: string;
+}
 
-// export default fetchMatchPrediction;
+const fetchMatchPrediction = async (predictionParams: Prediction) => {
+    const response = await API_URL.get('/report', {
+      params: predictionParams ,
+    });
+    return response.data;
+  };
+
+export default fetchMatchPrediction;
