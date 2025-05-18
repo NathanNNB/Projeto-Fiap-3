@@ -1,0 +1,6 @@
+opponentsList = [
+  "Liverpool",
+  "Manchester City"
+]
+
+
