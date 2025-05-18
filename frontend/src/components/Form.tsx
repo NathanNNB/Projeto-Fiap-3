@@ -10,15 +10,15 @@ console.log(fetchSquadsList)
 console.log(fetchOpponentsList)
 
 const getSquadsOptions = async () => {
-  let squads;
   try{
-    squads = await fetchSquadsList();
+    const { squads } = await fetchSquadsList();
+
     if (!squads.length){
       return;
     }
     const squadOptions = squads.map((squad)=>{
         return(
-          <option value={squad}>`${squad}`</option>
+          <option value={squad}>{squad}</option>
         )
     })
     return squadOptions
@@ -33,17 +33,16 @@ const getSquadsOptions = async () => {
 const squadOptions = await getSquadsOptions()
 
 const getOpponentOptions = async () => {
-  let opponent
   try{
-    const opponent = await fetchOpponentsList();
+    const { opponents } = await fetchOpponentsList();
 
-    if (!opponent.length){
+    if (!opponents.length){
       return;
     }
 
-    const opponentOptions = opponent.map((opponent)=>{
+    const opponentOptions = opponents.map((opponent)=>{
         return(
-          <option value={opponent}>`${opponent}`</option>
+          <option value={opponent}>{opponent}</option>
         )
     })
     return opponentOptions
@@ -63,11 +62,15 @@ const Formulario = () =>{
   return (
     <>
     <form className="form" onSubmit={handleSubmit}>
-      <input type="text" placeholder="Nome" />
-      <input type="email" placeholder="Email" />
       
       <select defaultValue="">
-        <option value="" disabled>Selecione a Formação</option>
+        <option value="" disabled>Selecione o Mando de Campo</option>
+          <option value="visitor" >Visitante</option>
+          <option value="home" >Mandante</option>
+      </select>
+
+      <select defaultValue="">
+        <option value="" disabled>Selecione a Formação do seu time</option>
         {squadOptions}
       </select>
 
