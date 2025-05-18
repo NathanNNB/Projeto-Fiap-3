@@ -54,6 +54,8 @@ const getOpponentOptions = async () => {
 const opponentOptions = await getOpponentOptions()
 
 const Formulario = () =>{
+
+  // TODO add return from Predicition.tsx and call fetchMatchPrediction
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Formulário enviado!');
