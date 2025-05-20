@@ -7,10 +7,9 @@ import os
 import time
 import pandas as pd
 from google.cloud import storage, bigquery
-
-from utils.api_requests import make_request
-from services.dados_api import buscar_times, buscar_partidas, buscar_estatisticas, buscar_lineups
-from db.gcp_utils import (
+from api_requests import make_request
+from dados_api import buscar_times, buscar_partidas, buscar_estatisticas, buscar_lineups
+from utils_gcp import (
     salvar_em_bucket,
     verificar_ou_criar_dataset,
     verificar_ou_criar_tabela,
@@ -50,16 +49,16 @@ def coletar_dados(season: str = Query(...), league: str = Query(...)):
     if df_teams.empty and df_partidas.empty:
         logging.info("Bases ausentes, iniciando coleta total.")
         df_teams = buscar_times(headers, season, league)
-        salvar_em_bucket(df_teams, BUCKET_NAME, "teams.csv")
-        carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "teams", BUCKET_NAME, "teams.csv")
+        salvar_em_bucket(df_teams, BUCKET_NAME, "teams_info.csv")
+        carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "teams", BUCKET_NAME, "teams_info.csv")
 
         all_matches = []
         for team_id in df_teams['team_id']:
             partidas = buscar_partidas(team_id, season, league, headers)
             all_matches.append(partidas)
         df_partidas = pd.concat(all_matches)
-        salvar_em_bucket(df_partidas, BUCKET_NAME, "partidas.csv")
-        carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "partidas", BUCKET_NAME, "partidas.csv")
+        salvar_em_bucket(df_partidas, BUCKET_NAME, "df_partidas.csv")
+        carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "partidas", BUCKET_NAME, "df_partidas.csv")
 
     times_incompletos = [t for t in df_partidas['team_id'].unique() if df_partidas[df_partidas['team_id'] == t].shape[0] < 38]
     if times_incompletos:
@@ -67,8 +66,8 @@ def coletar_dados(season: str = Query(...), league: str = Query(...)):
         for team_id in times_incompletos:
             novas_partidas = buscar_partidas(team_id, season, league, headers)
             df_partidas = pd.concat([df_partidas, novas_partidas]).drop_duplicates('id_partida')
-        salvar_em_bucket(df_partidas, BUCKET_NAME, "partidas.csv")
-        carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "partidas", BUCKET_NAME, "partidas.csv")
+        salvar_em_bucket(df_partidas, BUCKET_NAME, "df_partidas.csv")
+        carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "partidas", BUCKET_NAME, "df_partidas.csv")
 
     ids_partidas = set(df_partidas['id_partida'])
     ids_stats = set(df_stats['id_partida']) if not df_stats.empty else set()
@@ -96,12 +95,12 @@ def coletar_dados(season: str = Query(...), league: str = Query(...)):
 
         if novas_stats:
             df_stats = pd.concat([df_stats] + novas_stats)
-            salvar_em_bucket(df_stats, BUCKET_NAME, "estatisticas.csv")
-            carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "estatisticas", BUCKET_NAME, "estatisticas.csv")
+            salvar_em_bucket(df_stats, BUCKET_NAME, "df_stats.csv")
+            carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "estatisticas", BUCKET_NAME, "df_stats.csv")
 
         if novas_lineups:
             df_lineups = pd.concat([df_lineups] + novas_lineups)
-            salvar_em_bucket(df_lineups, BUCKET_NAME, "lineups.csv")
-            carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "lineups", BUCKET_NAME, "lineups.csv")
+            salvar_em_bucket(df_lineups, BUCKET_NAME, "df_lineups.csv")
+            carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "lineups", BUCKET_NAME, "df_lineups.csv")
 
     return {"status": "Processo finalizado com sucesso."}
