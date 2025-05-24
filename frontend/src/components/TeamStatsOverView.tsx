@@ -23,7 +23,7 @@ interface TeamStatsOverviewProps {
   victoryData: VictoryDataItem[];
 }
 
-const COLORS = ['#DA291C', '#FDB913', '#1B1B1B']; // Vitória MU, Empate, Derrota
+const COLORS = ['#DA291C', '#5F5F5F', '#FFFFFF']; // Vitória MU, Empate, Derrota
 
 const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps) => {
   const stats = [

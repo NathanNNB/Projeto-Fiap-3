@@ -19,7 +19,7 @@ def list_opponents():
     client = bigquery.Client()
 
     query = """
-        SELECT DISTINCT team_name 
+        SELECT DISTINCT team_name, team_id
         FROM `fiap-3.fut.times`
         WHERE team_name != 'Manchester United'
     """
@@ -29,7 +29,7 @@ def list_opponents():
         results = query_job.result()
 
         # Extrai as formações numa lista simples
-        opponents_list = [row.team_name for row in results]
+        opponents_list = [{"team_id": row.team_id, "team_name": row.team_name} for row in results]
 
     except Exception as e:
         return jsonify({"erro": str(e)}), 500
