@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 if os.environ.get("ENV", "local") == "local":
     load_dotenv()
 
-squads = Blueprint("squads", __name__)
+squads = Blueprint("/squads", __name__)
 CORS(squads)
 
-@squads.route("/", methods=["GET"])
+@squads.route("", methods=["GET"], strict_slashes=False)
 
 def list_squads():
     client = bigquery.Client()

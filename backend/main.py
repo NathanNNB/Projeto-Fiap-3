@@ -2,29 +2,29 @@ import os
 from app import create_app
 from flask_cors import CORS
 from flask import request, redirect
+from werkzeug.middleware.proxy_fix import ProxyFix  # 👈 IMPORTANTE
+
+from dotenv import load_dotenv
+load_dotenv()
 
 app = create_app()
-
-env = os.environ.get('ENV', 'local') 
+app.config['PREFERRED_URL_SCHEME'] = 'https'
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)  # 👈 ESSENCIAL
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.before_request
-def before_request():
-    # If the request is NOT secure (not HTTPS)
-    if not request.is_secure and env != 'local':
-        # Build the HTTPS version of the URL
-        url = request.url.replace("http://", "https://", 1)
-        # Redirect to HTTPS URL with permanent redirect status code 301
-        return redirect(url, code=301)
+def enforce_https():
+    if os.getenv("FLASK_ENV") == "production":
+        if request.headers.get("X-Forwarded-Proto", "http") != "https":
+            url = request.url.replace("http://", "https://", 1)
+            return redirect(url, code=308)
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 8080))
 
-    if env == 'local':
-        # Rodando localmente
+    if os.getenv("FLASK_ENV") == "local":
         print("Running in LOCAL environment")
-        app.run(host='0.0.0.0', port=port, debug=True)  # debug ativo localmente
+        app.run(host='0.0.0.0', port=port, debug=True)
     else:
-        # Rodando no GCP (produção)
         print("Running in PRODUCTION environment")
         app.run(host='0.0.0.0', port=port)
-

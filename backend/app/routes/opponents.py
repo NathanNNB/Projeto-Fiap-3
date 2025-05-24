@@ -9,11 +9,11 @@ from google.cloud import bigquery\
 if os.environ.get("ENV", "local") == "local":
     load_dotenv()
 
-opponents = Blueprint("opponents", __name__)
+opponents = Blueprint("/opponents", __name__)
 
 CORS(opponents)
 
-@opponents.route("/", methods=["GET"])
+@opponents.route("", methods=["GET"], strict_slashes=False)
 def list_opponents():
     
     client = bigquery.Client()
