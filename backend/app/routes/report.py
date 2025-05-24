@@ -8,8 +8,11 @@ CORS(report)
 @report.route("/", methods=["GET"])
 def list_report():
 
-    field = request.args.get('field', default='', type=str)
-    squad = request.args.get('squad', default='', type=str)
-    opponent = request.args.get('opponent', default='', type=str)
+#     field = request.args.get('field', default='', type=str)
+#     squad = request.args.get('squad', default='', type=str)
+#     opponent = request.args.get('opponent', default='', type=str)
+
+# # SELECT DISTINCT formation from `fut.formacoes` WHERE id_time = 33 
+
 
     return jsonify({"report": report_list})
