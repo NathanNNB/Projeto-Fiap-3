@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint, jsonify
 from app.services.opponents import opponentsList
 from flask_cors import CORS
@@ -5,9 +6,11 @@ from dotenv import load_dotenv
 from google.cloud import bigquery\
 
 # Carrega as variáveis do arquivo .env
-load_dotenv()
+if os.environ.get("ENV", "local") == "local":
+    load_dotenv()
 
 opponents = Blueprint("opponents", __name__)
+
 CORS(opponents)
 
 @opponents.route("/", methods=["GET"])

@@ -1,11 +1,13 @@
+import os
 from flask import Blueprint, jsonify
 from app.services.squads import squadsList
 from flask_cors import CORS
+from google.cloud import bigquery
 from dotenv import load_dotenv
-from google.cloud import bigquery\
 
 # Carrega as variáveis do arquivo .env
-load_dotenv()
+if os.environ.get("ENV", "local") == "local":
+    load_dotenv()
 
 squads = Blueprint("squads", __name__)
 CORS(squads)
@@ -29,6 +31,7 @@ def list_squads():
         formations = [row.formation for row in results]
 
     except Exception as e:
+        print("Not able to get data from DB")
         formations = squadsList
 
     return jsonify({"squads": formations})

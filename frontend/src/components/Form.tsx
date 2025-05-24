@@ -6,8 +6,6 @@ import './form.css';
 import { fetchOpponentsList } from '../services/oppponents'; 
 import { fetchSquadsList } from '../services/squads';
 
-console.log(fetchSquadsList)
-console.log(fetchOpponentsList)
 
 const getSquadsOptions = async () => {
   try{
@@ -18,7 +16,7 @@ const getSquadsOptions = async () => {
     }
     const squadOptions = squads.map((squad)=>{
         return(
-          <option value={squad}>{squad}</option>
+          <option key={squad} value={squad}>{squad}</option>
         )
     })
     return squadOptions
@@ -42,7 +40,7 @@ const getOpponentOptions = async () => {
 
     const opponentOptions = opponents.map((opponent)=>{
         return(
-          <option value={opponent}>{opponent}</option>
+          <option key={opponent} value={opponent}>{opponent}</option>
         )
     })
     return opponentOptions

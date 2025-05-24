@@ -3,6 +3,7 @@ from app.services.report import report_list
 from flask_cors import CORS
 
 report = Blueprint("report", __name__)
+
 CORS(report)
 
 @report.route("/", methods=["GET"])
