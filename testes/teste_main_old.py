@@ -10,7 +10,7 @@ import sqlite3
 import pandas as pd
 from api_requests import make_request
 from dados_api import buscar_times, buscar_partidas, buscar_estatisticas, buscar_lineups
-from database import init_db, carregar_base, inserir_dados, partidas_incompletas, partidas_faltantes
+from testes.database_old import init_db, carregar_base, inserir_dados, partidas_incompletas, partidas_faltantes
 
 app = FastAPI()
 load_dotenv()

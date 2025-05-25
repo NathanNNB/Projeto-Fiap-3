@@ -14,7 +14,8 @@ from utils_gcp import (
     verificar_ou_criar_dataset,
     verificar_ou_criar_tabela,
     carregar_csv_para_bigquery,
-    ler_tabela_bigquery
+    ler_tabela_bigquery,
+    partidas_incompletas
 )
 
 app = FastAPI()
@@ -44,7 +45,7 @@ def coletar_dados(season: str = Query(...), league: str = Query(...)):
     df_teams = ler_tabela_bigquery(PROJECT_ID, BQ_DATASET, "teams")
     df_partidas = ler_tabela_bigquery(PROJECT_ID, BQ_DATASET, "partidas")
     df_stats = ler_tabela_bigquery(PROJECT_ID, BQ_DATASET, "estatisticas")
-    df_lineups = ler_tabela_bigquery(PROJECT_ID, BQ_DATASET, "lineups")
+    df_lineups = ler_tabela_bigquery(PROJECT_ID, BQ_DATASET, "formacoes")
 
     if df_teams.empty and df_partidas.empty:
         logging.info("Bases ausentes, iniciando coleta total.")
@@ -60,7 +61,8 @@ def coletar_dados(season: str = Query(...), league: str = Query(...)):
         salvar_em_bucket(df_partidas, BUCKET_NAME, "df_partidas.csv")
         carregar_csv_para_bigquery(PROJECT_ID, BQ_DATASET, "partidas", BUCKET_NAME, "df_partidas.csv")
 
-    times_incompletos = [t for t in df_partidas['team_id'].unique() if df_partidas[df_partidas['team_id'] == t].shape[0] < 38]
+
+    times_incompletos = partidas_incompletas(df_partidas)
     if times_incompletos:
         logging.info(f"Encontrados times com menos de 38 partidas: {times_incompletos}")
         for team_id in times_incompletos:
