@@ -9,7 +9,6 @@ interface Prediction {
 }
 
 const fetchMatchPrediction = async (predictionParams: Prediction) => {
-  debugger
     const response = await API_URL.get('/report', {
       params: predictionParams ,
     });
