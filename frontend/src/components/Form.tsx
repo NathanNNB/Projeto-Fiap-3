@@ -28,7 +28,6 @@ const Formulario = () => {
   const [selectedSide, setSelectedSide] = useState('');
   const [squadOptions, setSquadOptions] = useState<JSX.Element[]>([]);
   const [opponentOptions, setOpponentOptions] = useState<JSX.Element[]>([]);
-  const [opponentsList, setOpponentsList] = useState({});
   const [scoutData, setScoutData] = useState<scout_data | null>(null);
 
   const victoryData = [
@@ -57,7 +56,6 @@ const Formulario = () => {
       try {
         const { opponents } = await fetchOpponentsList();
         if (opponents?.length) {
-          setOpponentsList(opponents)
           setOpponentOptions(
             opponents.map((opponent: any) => (
               <option key={opponent.team_id} value={opponent.team_id}>
