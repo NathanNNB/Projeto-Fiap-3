@@ -1,12 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // src/components/Formulario.tsx
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type JSX } from 'react';
 import './form.css';
 import { fetchOpponentsList } from '../services/oppponents';
 import { fetchSquadsList } from '../services/squads';
 import TeamStatsOverview from './TeamStatsOverView';
 import fetchMatchPrediction from '../services/matchPrediction';
+
+interface scout_data {
+  teams: teamScoutData[];
+}
+
+interface teamScoutData {
+  team_id: number;
+  avg_total_goals_team: number;
+  avg_shots_on_goal_team: number;
+  avg_possession_team: number;
+  avg_expected_goals_team: number;
+  avg_passes_accurate_team: number;
+  avg_total_passes_team: number;
+}
 
 const Formulario = () => {
   const [selectedSquad, setSelectedSquad] = useState('');
@@ -14,28 +28,8 @@ const Formulario = () => {
   const [selectedSide, setSelectedSide] = useState('');
   const [squadOptions, setSquadOptions] = useState<JSX.Element[]>([]);
   const [opponentOptions, setOpponentOptions] = useState<JSX.Element[]>([]);
-
-  const teamA = {
-    name: 'Manchester United',
-    avg_goals: 1.8,
-    opportunites: 12,
-    goal_suffered: 1.1,
-    draws: 5,
-    victories: 18,
-    ball_possession: 55,
-    win_rate: 62,
-  };
-
-  const teamB = {
-    name: 'Liverpool',
-    avg_goals: 2.1,
-    opportunites: 14,
-    goal_suffered: 0.9,
-    draws: 6,
-    victories: 20,
-    ball_possession: 60,
-    win_rate: 67,
-  };
+  const [opponentsList, setOpponentsList] = useState({});
+  const [scoutData, setScoutData] = useState<scout_data | null>(null);
 
   const victoryData = [
     { name: 'Vitória Manchester United', value: 55 },
@@ -63,6 +57,7 @@ const Formulario = () => {
       try {
         const { opponents } = await fetchOpponentsList();
         if (opponents?.length) {
+          setOpponentsList(opponents)
           setOpponentOptions(
             opponents.map((opponent: any) => (
               <option key={opponent.team_id} value={opponent.team_id}>
@@ -89,10 +84,10 @@ const Formulario = () => {
     };
 
     try {
-      const { scout_data } = await fetchMatchPrediction(predictionParams);
+      const scout_data = await fetchMatchPrediction(predictionParams);
 
+      setScoutData(scout_data)
       // Aqui você pode setar o resultado em um state e exibir os dados no TeamStatsOverview
-      console.log('Resultado:', scout_data);
     } catch {
       console.log('Erro ao consultar API');
     }
@@ -138,7 +133,11 @@ const Formulario = () => {
         <button type="submit">Enviar</button>
       </form>
 
-      <TeamStatsOverview teamA={teamA} teamB={teamB} victoryData={victoryData} />
+      {
+        scoutData &&
+        <TeamStatsOverview teamA={scoutData.teams[0]} teamB={scoutData.teams[1]} victoryData={victoryData} />
+      }
+      
     </>
   );
 };

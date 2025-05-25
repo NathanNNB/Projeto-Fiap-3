@@ -2,14 +2,13 @@ import './TeamStatsOverview.css';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 interface TeamStats {
-  name: string;
-  avg_goals: number;
-  opportunites: number;
-  goal_suffered: number;
-  draws: number;
-  victories: number;
-  ball_possession: number;
-  win_rate: number;
+  team_id: number;
+  avg_total_goals_team: number;
+  avg_shots_on_goal_team: number;
+  avg_possession_team: number;
+  avg_expected_goals_team: number;
+  avg_passes_accurate_team: number;
+  avg_total_passes_team: number;
 }
 
 interface VictoryDataItem {
@@ -26,14 +25,16 @@ interface TeamStatsOverviewProps {
 const COLORS = ['#DA291C', '#5F5F5F', '#FFFFFF']; // Vitória MU, Empate, Derrota
 
 const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps) => {
+
+  if (!teamA && !teamB && victoryData) {
+    return;
+  }
   const stats = [
-    { label: 'Gols Médios', key: 'avg_goals' },
-    { label: 'Oportunidades Criadas', key: 'opportunites' },
-    { label: 'Gols Sofridos', key: 'goal_suffered' },
-    { label: 'Empates', key: 'draws' },
-    { label: 'Vitórias', key: 'victories' },
-    { label: 'Posse de Bola (%)', key: 'ball_possession' },
-    { label: 'Taxa de Vitórias (%)', key: 'win_rate' },
+    { label: 'Média de Gols', key: 'avg_total_goals_team' },
+    { label: 'Média Oportunidades Criadas', key: 'avg_shots_on_goal_team' },
+    { label: 'Gols Esperados (%)', key: 'avg_expected_goals_team' },
+    { label: 'Posse de Bola (%)', key: 'avg_possession_team' },
+    { label: 'Média de Passes', key: 'avg_total_passes_team' },
   ];
 
   return (
@@ -44,8 +45,8 @@ const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps
           <thead>
             <tr>
               <th>Estatística</th>
-              <th>{teamA.name}</th>
-              <th>{teamB.name}</th>
+              <th>{teamA.team_id}</th>
+              <th>{teamB.team_id}</th>
             </tr>
           </thead>
           <tbody>

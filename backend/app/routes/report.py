@@ -19,11 +19,12 @@ def list_report():
         SELECT
             team_id,
             ROUND(AVG(CAST(avg_total_goals_team AS FLOAT64)), 2) AS avg_total_goals_team,
-            ROUND(AVG(CAST(avg_total_shots_team AS FLOAT64)), 2) AS avg_total_shots_team,
             ROUND(AVG(CAST(avg_shots_on_goal_team AS FLOAT64)), 2) AS avg_shots_on_goal_team,
             ROUND(AVG(CAST(avg_possession_team AS FLOAT64)), 2) AS avg_possession_team,
-            ROUND(AVG(CAST(avg_expected_goals_team AS FLOAT64)), 2) AS avg_expected_goals_team
-        FROM `fiap-3.fut.dados_modelo_prev`
+            ROUND(AVG(CAST(avg_expected_goals_team AS FLOAT64)), 2) AS avg_expected_goals_team,
+            ROUND(AVG(CAST(avg_passes_accurate_team AS FLOAT64)), 2) AS avg_passes_accurate_team,
+            ROUND(AVG(CAST(avg_total_passes_team AS FLOAT64)), 2) AS avg_total_passes_team
+        FROM `fiap-3.fut.dados_estatisticas_gerais`
         WHERE team_id IN (@team1, @team2)
         GROUP BY team_id
     """
