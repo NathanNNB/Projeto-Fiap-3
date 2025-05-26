@@ -14,6 +14,7 @@ interface scout_data {
 
 interface teamScoutData {
   team_id: number;
+  team_name: string;
   avg_total_goals_team: number;
   avg_shots_on_goal_team: number;
   avg_possession_team: number;

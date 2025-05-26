@@ -3,6 +3,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 interface TeamStats {
   team_id: number;
+  team_name: string;
   avg_total_goals_team: number;
   avg_shots_on_goal_team: number;
   avg_possession_team: number;
@@ -32,7 +33,7 @@ const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps
   const stats = [
     { label: 'Média de Gols', key: 'avg_total_goals_team' },
     { label: 'Média Oportunidades Criadas', key: 'avg_shots_on_goal_team' },
-    { label: 'Gols Esperados (%)', key: 'avg_expected_goals_team' },
+    { label: 'Gols Esperados', key: 'avg_expected_goals_team' },
     { label: 'Posse de Bola (%)', key: 'avg_possession_team' },
     { label: 'Média de Passes', key: 'avg_total_passes_team' },
   ];
@@ -45,8 +46,8 @@ const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps
           <thead>
             <tr>
               <th>Estatística</th>
-              <th>{teamA.team_id}</th>
-              <th>{teamB.team_id}</th>
+              <th>{teamA.team_name}</th>
+              <th>{teamB.team_name}</th>
             </tr>
           </thead>
           <tbody>

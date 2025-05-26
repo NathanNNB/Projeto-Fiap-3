@@ -16,8 +16,9 @@ def list_report():
         return jsonify({"error": "Missing opponent_id parameter"}), 400
 
     query = """
-        SELECT
+        SELECT  
             team_id,
+            ANY_VALUE(team_name) AS team_name,
             ROUND(AVG(CAST(avg_total_goals_team AS FLOAT64)), 2) AS avg_total_goals_team,
             ROUND(AVG(CAST(avg_shots_on_goal_team AS FLOAT64)), 2) AS avg_shots_on_goal_team,
             ROUND(AVG(CAST(avg_possession_team AS FLOAT64)), 2) AS avg_possession_team,
