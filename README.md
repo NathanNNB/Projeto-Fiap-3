@@ -15,8 +15,12 @@ Com os dados armazenados e tratados, construímos um modelo de Random Forest com
 - **Frontend:https://storage.googleapis.com/soccer-scout-fiap-3/index.html**
 - **Backend: https://flask-service-494036280576.us-central1.run.app**
 
+### Diagrama
+
+![fiap-3 drawio (2)](https://github.com/user-attachments/assets/622973b0-0663-40c6-8320-3cfd0d95fd12)
+
 #### Como iniciar a aplicação:
-![fiap-3 drawio (1)](https://github.com/user-attachments/assets/60002b21-17a9-4af5-800b-e4ae8f0ed129)
+
 
 - **Backend:**
 
