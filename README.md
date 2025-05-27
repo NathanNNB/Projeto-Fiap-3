@@ -7,6 +7,10 @@
 - **Frontend:https://storage.googleapis.com/soccer-scout-fiap-3/index.html**
 - **Backend: https://flask-service-494036280576.us-central1.run.app**
 
+### Diagrama do Projeto
+
+![fiap-3 drawio](https://github.com/user-attachments/assets/28ff4815-343c-4eb3-b9e0-3245b6c4b81a)
+
 #### Como iniciar a aplicação:
 
 - **Backend:**
@@ -42,3 +46,5 @@
      yarn install
      yarn run dev
      ```
+
+     
