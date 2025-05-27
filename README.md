@@ -2,6 +2,11 @@
 ##### Nathan Novais - 360103
 ##### William Brandão - 360387
 ### Descrição do Projeto
+Desenvolvemos um modelo de previsão de resultados de futebol focado no Manchester United. Utilizamos Vite no frontend e Flask no backend, ambos hospedados na Google Cloud Platform (GCP).
+
+Para alimentar o sistema com dados reais, criamos uma base no BigQuery da GCP, utilizando um job automatizado que fazia requisições à API da api-sports.io. A partir disso, coletamos informações sobre partidas, estatísticas e elencos.
+
+Com os dados armazenados e tratados, construímos um modelo de Random Forest com o objetivo de prever, a partir de informações prévias da rodada, a probabilidade de vitória, empate ou derrota do Manchester United.
 
 ### Links Úteis
 - **Frontend:https://storage.googleapis.com/soccer-scout-fiap-3/index.html**
@@ -9,7 +14,8 @@
 
 ### Diagrama do Projeto
 
-![fiap-3 drawio](https://github.com/user-attachments/assets/28ff4815-343c-4eb3-b9e0-3245b6c4b81a)
+![fiap-3 drawio (1)](https://github.com/user-attachments/assets/249ce2a0-59ac-4018-b876-504ddcff1ad8)
+
 
 #### Como iniciar a aplicação:
 
