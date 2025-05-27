@@ -9,7 +9,8 @@ import TeamStatsOverview from './TeamStatsOverView';
 import fetchMatchPrediction from '../services/matchPrediction';
 
 interface scout_data {
-  teams: teamScoutData[];
+  teams: teamScoutData[],
+  victoryData: [],
 }
 
 interface teamScoutData {
@@ -30,12 +31,6 @@ const Formulario = () => {
   const [squadOptions, setSquadOptions] = useState<JSX.Element[]>([]);
   const [opponentOptions, setOpponentOptions] = useState<JSX.Element[]>([]);
   const [scoutData, setScoutData] = useState<scout_data | null>(null);
-
-  const victoryData = [
-    { name: 'Vitória Manchester United', value: 55 },
-    { name: 'Empate', value: 25 },
-    { name: 'Vitória Adversário', value: 20 },
-  ];
 
   useEffect(() => {
     const fetchOptions = async () => {
@@ -85,6 +80,7 @@ const Formulario = () => {
     try {
       const scout_data = await fetchMatchPrediction(predictionParams);
 
+
       setScoutData(scout_data)
       // Aqui você pode setar o resultado em um state e exibir os dados no TeamStatsOverview
     } catch {
@@ -103,8 +99,8 @@ const Formulario = () => {
           <option value="" disabled>
             Selecione o Mando de Campo
           </option>
-          <option value="visitor">Visitante</option>
-          <option value="home">Mandante</option>
+          <option value="0">Visitante</option>
+          <option value="1">Mandante</option>
         </select>
 
         <select
@@ -134,7 +130,7 @@ const Formulario = () => {
 
       {
         scoutData &&
-        <TeamStatsOverview teamA={scoutData.teams[0]} teamB={scoutData.teams[1]} victoryData={victoryData} />
+        <TeamStatsOverview teamA={scoutData.teams[0]} teamB={scoutData.teams[1]} victoryData={scoutData.victoryData} />
       }
       
     </>

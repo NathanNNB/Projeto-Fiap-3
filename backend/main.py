@@ -5,7 +5,7 @@ from flask import request, redirect
 from werkzeug.middleware.proxy_fix import ProxyFix  # 👈 IMPORTANTE
 
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 app = create_app()
 app.config['PREFERRED_URL_SCHEME'] = 'https'

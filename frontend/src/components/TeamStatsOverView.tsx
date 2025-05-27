@@ -12,15 +12,11 @@ interface TeamStats {
   avg_total_passes_team: number;
 }
 
-interface VictoryDataItem {
-  name: string;
-  value: number;
-}
 
 interface TeamStatsOverviewProps {
   teamA: TeamStats;
   teamB: TeamStats;
-  victoryData: VictoryDataItem[];
+  victoryData: [number, number, number][];
 }
 
 const COLORS = ['#DA291C', '#5F5F5F', '#FFFFFF']; // Vitória MU, Empate, Derrota
@@ -30,6 +26,17 @@ const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps
   if (!teamA && !teamB && victoryData) {
     return;
   }
+
+  const win = parseFloat((victoryData[0][2]*100).toFixed(1))
+  const lose = parseFloat((victoryData[0][0]*100).toFixed(1))
+  const draw = parseFloat((victoryData[0][1]*100).toFixed(1))
+  const chartData = [
+    { name: 'Vitória Manchester United', value: win },
+    { name: 'Empate', value: draw },
+    { name: 'Vitória Adversário', value: lose },
+  ];
+  
+
   const stats = [
     { label: 'Média de Gols', key: 'avg_total_goals_team' },
     { label: 'Média Oportunidades Criadas', key: 'avg_shots_on_goal_team' },
@@ -67,14 +74,14 @@ const TeamStatsOverview = ({ teamA, teamB, victoryData }: TeamStatsOverviewProps
         <div className="victory-chart-wrapper">
         <PieChart width={300} height={300}>
           <Pie
-            data={victoryData}
+            data={chartData}
             cx="50%"
             cy="50%"
             label
             outerRadius={100}
             dataKey="value"
           >
-            {victoryData.map((_, index) => (
+            {chartData.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
